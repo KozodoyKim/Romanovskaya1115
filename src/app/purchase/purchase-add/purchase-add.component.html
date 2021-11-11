@@ -1,0 +1,33 @@
+<div class="container">
+    <form class="form-input"
+          [formGroup]="purchaseForm"
+          (ngSubmit)="onAddPurchase()">
+        <div class="raw">
+            <div class="col-8">
+                <h4>Добавить продукт</h4>
+            </div>
+
+            <button (click)="close()" type="button" class="btn btn-sm btn-close"></button>
+        </div>
+
+        <p class="input-name">Название продукта:</p>
+        <input class="form-control note-name-form"
+         type="text"
+          name="purchase name"
+          formControlName="name">
+
+
+          <p class="input-amount">Количество:</p>
+          <input class="form-control note-amount-form"
+           type="text"
+            name="purchase amount"
+            formControlName="amount">
+            <div class = "row mt-3">
+        <button
+       type="submit"
+        class="btn btn-outline-success"
+        [disabled]="purchaseForm.invalid">Добавить</button>
+      </div>
+    </form>
+
+</div>

@@ -1,0 +1,28 @@
+
+
+  <div *ngIf=" purchase.status === 'Не куплено';else elseStatusBlock">
+    <div class="free">
+      <blockquote class="blockquote mb-0 card-body">
+        <p class="name"> <b>{{purchase.name}} </b></p>
+        <p class="amount" >{{purchase.amount}} </p>
+   
+    <button (click)="onChangeStatus(purchase.id)" type="button" class="btn btn-outline-success">{{purchase.status}} </button>
+    <hr>
+    <button  (click)="edit()" type="button" class="btn btn-outline-secondary btn-edit">Редактировать </button>
+    <button  (click)="onDelete(purchase.id)" type="button" class="btn btn-outline-secondary btn-delete">Удалить </button>
+      </blockquote>
+    </div>
+   </div>
+
+   <ng-template #elseStatusBlock>
+    <div class="not-free" >
+      <blockquote class="blockquote mb-0 card-body">
+        <p class="name"> <b>{{purchase.name}} </b></p>
+        <p class="amount" id="type">{{purchase.amount}} </p>
+        <button (click)="onChangeStatus(purchase.id)" type="button" class="btn btn-outline-warning">{{purchase.status}} </button>
+        <hr>
+    <button  (click)="edit()" type="button" class="btn btn-outline-secondary btn-edit">Редактировать </button>
+    <button  (click)="onDelete(purchase.id)" type="button" class="btn btn-outline-secondary btn-delete">Удалить </button>
+  </blockquote>
+    </div>
+   </ng-template>
